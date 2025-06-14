@@ -1,18 +1,18 @@
 /* eslint-disable @typescript-eslint/ban-ts-comment */
 // @ts-nocheck
 import { Request, Response } from "express";
-import { User } from "../database/models/User";
-import catchAsync from "../utils/catchAsync";
-import { response } from "../utils/response";
+import { User } from "../../database/models/User";
+import catchAsync from "../../utils/catchAsync";
+import { response } from "../../utils/response";
 import httpStatus from "http-status";
 import bcrypt from "bcryptjs";
 import jwt from "jsonwebtoken";
-import { envConfig } from "../config/envConfig";
+import { envConfig } from "../../config/envConfig";
 import {
   createUser,
   findUser,
   getUserWithPreferences as fetchUserWithPreferences,
-} from "../services/user.service";
+} from "../../services/user.service";
 
 const registerUser = catchAsync(async (req: Request, res: Response) => {
   const { name, email, password } = req.body;

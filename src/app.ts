@@ -6,6 +6,7 @@ import compression from "compression";
 import { envConfig } from "./config/envConfig";
 import authRoutes from "./routes/auth.routes";
 import userRoutes from "./routes/user.route";
+import chartRoutes from "./routes/charts.route";
 import logger from "./config/logger";
 
 const app = express();
@@ -42,6 +43,8 @@ app.use(compression());
 // Routes
 app.use("/api/auth", authRoutes);
 app.use("/api/user", userRoutes);
+app.use("/api/charts", chartRoutes);
+
 // Health check endpoint
 app.get("/health", (_req: Request, res: Response) => {
   res.status(200).json({ status: "ok", timestamp: new Date().toISOString() });
