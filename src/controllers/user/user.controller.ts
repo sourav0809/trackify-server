@@ -72,7 +72,6 @@ const getUserWithPreferences = catchAsync(
 const updateUserPreferences = catchAsync(
   async (req: AuthenticatedRequest, res: Response) => {
     const { dashboardLayoutConfig } = req.body;
-    console.log(dashboardLayoutConfig);
     const user = await updateOrCreateUserPreferences(req.user.id, {
       dashboardLayoutConfig,
     });
