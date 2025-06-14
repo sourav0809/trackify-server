@@ -39,16 +39,14 @@ const initDatabase = async () => {
     await sequelize.authenticate();
     logger.info("Database connection has been established successfully.");
 
-    // Sync models in development
-    if (isDevelopment) {
-      await sequelize.sync();
-      logger.info("Database synchronized successfully.");
-    }
+    await sequelize.sync();
+    logger.info("Database synchronized successfully.");
   } catch (err) {
     logger.error("Unable to connect to the database:", err);
     logger.error("Please check your database credentials in .env file:");
     logger.error(`Database: ${envConfig.db.name}`);
     logger.error(`User: ${envConfig.db.user}`);
+    logger.error(`Password: ${envConfig.db.password}`);
     logger.error(`Host: ${envConfig.db.host}:${envConfig.db.port}`);
     process.exit(1);
   }
