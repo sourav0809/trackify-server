@@ -3,7 +3,6 @@
     {
       "name": "sales-dashboard-server",
       "script": "dist/index.js",
-      "cwd": "/home/ec2-user/trackify-server",
       "watch": true,
       "instances": "1",
       "env": {
