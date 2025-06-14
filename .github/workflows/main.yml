@@ -29,5 +29,16 @@ jobs:
       - name: Build application
         run: npm run build
 
+      - name: Link Environment File
+        run: |
+          if [ -f /opt/trackify-server/.env ]; then
+            rm -f .env
+            ln -s /opt/trackify-server/.env .env
+            echo ".env symlink created"
+          else
+            echo "/opt/trackify-server/.env not found"
+            exit 1
+          fi
+
       - name: Start Server
         run: npm run start:prod
