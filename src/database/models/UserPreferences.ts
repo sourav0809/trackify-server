@@ -28,10 +28,6 @@ export class UserPreferences extends Model {
   UserId!: number;
 
   @Column({
-    type: DataType.STRING,
-    allowNull: false,
-  })
-  @Column({
     type: DataType.JSONB,
     allowNull: false,
   })

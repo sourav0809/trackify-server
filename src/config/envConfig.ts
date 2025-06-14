@@ -17,8 +17,8 @@ const envVarsSchema = Joi.object()
     JWT_SECRET: Joi.string().required(),
     JWT_ACCESS_EXPIRATION_MINUTES: Joi.number().default(30),
     JWT_REFRESH_EXPIRATION_DAYS: Joi.number().default(30),
-    RATE_LIMIT_WINDOW_MS: Joi.number().default(15 * 60 * 1000), // 15 minutes
-    RATE_LIMIT_MAX: Joi.number().default(100),
+    RATE_LIMIT_WINDOW_MS: Joi.number().default(20 * 60 * 1000),
+    RATE_LIMIT_MAX: Joi.number().default(500),
   })
   .unknown();
 

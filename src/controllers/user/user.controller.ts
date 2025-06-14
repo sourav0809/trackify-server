@@ -12,6 +12,7 @@ import {
   createUser,
   findUser,
   getUserWithPreferences as fetchUserWithPreferences,
+  updateOrCreateUserPreferences,
 } from "../../services/user.service";
 
 const registerUser = catchAsync(async (req: Request, res: Response) => {
@@ -68,4 +69,20 @@ const getUserWithPreferences = catchAsync(
   }
 );
 
-export { loginUser, registerUser, getUserWithPreferences };
+const updateUserPreferences = catchAsync(
+  async (req: AuthenticatedRequest, res: Response) => {
+    const { dashboardLayoutConfig } = req.body;
+    console.log(dashboardLayoutConfig);
+    const user = await updateOrCreateUserPreferences(req.user.id, {
+      dashboardLayoutConfig,
+    });
+    return response(res, httpStatus.OK, "User preferences updated", { user });
+  }
+);
+
+export {
+  loginUser,
+  registerUser,
+  getUserWithPreferences,
+  updateUserPreferences,
+};

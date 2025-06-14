@@ -33,4 +33,21 @@ const getUserWithPreferences = async (condition: any) => {
   return user;
 };
 
-export { createUser, findUser, updateUser, getUserWithPreferences };
+const updateOrCreateUserPreferences = async (
+  UserId: number,
+  userPreferencesData: CreationAttributes<UserPreferences>
+) => {
+  const userPreferences = await UserPreferences.upsert({
+    UserId,
+    ...userPreferencesData,
+  });
+  return userPreferences;
+};
+
+export {
+  createUser,
+  findUser,
+  updateUser,
+  getUserWithPreferences,
+  updateOrCreateUserPreferences,
+};

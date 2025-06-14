@@ -41,7 +41,7 @@ const initDatabase = async () => {
 
     // Sync models in development
     if (isDevelopment) {
-      await sequelize.sync({ alter: true });
+      await sequelize.sync();
       logger.info("Database synchronized successfully.");
     }
   } catch (err) {
