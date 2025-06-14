@@ -29,7 +29,5 @@ jobs:
       - name: Build application
         run: npm run build
 
-      - name: Restart PM2 Service
-        run: |
-          npm run stop:pm2 || true
-          npm run start:pm2
+      - name: Start Server
+        run: npm run start:prod
