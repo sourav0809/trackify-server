@@ -13,6 +13,8 @@ import { getOrderDistributionData } from "../controllers/charts/orderDistributio
 import { getSalesTrendsData } from "../controllers/charts/salesTrends.controller";
 import { getInventoryLevelsData } from "../controllers/charts/inventoryLevels.controller";
 import { getVisitorInsightsData } from "../controllers/charts/visitorInsights.controller";
+import { getTodayMetricsData } from "../controllers/charts/todayMetrics.controller";
+import { getTopProductsData } from "../controllers/charts/topProducts.controller";
 import { authenticate } from "../middlewares/auth";
 
 const router = express.Router();
@@ -59,5 +61,11 @@ router.get("/inventory-levels", authenticate, getInventoryLevelsData);
 
 // Visitor insights routes
 router.get("/visitor-insights", authenticate, getVisitorInsightsData);
+
+// Today's metrics routes
+router.get("/today-metrics", authenticate, getTodayMetricsData);
+
+// Top products routes
+router.get("/top-products", authenticate, getTopProductsData);
 
 export default router;

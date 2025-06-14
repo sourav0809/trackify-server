@@ -469,3 +469,61 @@ export const visitorInsightsData: VisitorInsightData[] = [
     returningVisitors: 1900,
   },
 ];
+
+export const todayMetricsData: MetricData[] = [
+  {
+    id: 1,
+    title: "Total Sales",
+    value: "$125k",
+    subtitle: "+12.5% from yesterday",
+  },
+  {
+    id: 2,
+    title: "Total Orders",
+    value: "450",
+    subtitle: "+8.3% from yesterday",
+  },
+  {
+    id: 3,
+    title: "Products Sold",
+    value: "639",
+    subtitle: "+15.2% from yesterday",
+  },
+  {
+    id: 4,
+    title: "New Users",
+    value: "142",
+    subtitle: "+4.8% from yesterday",
+  },
+];
+
+export const topProductsData: ProductPerFormanceData[] = [
+  {
+    name: "Designer Evening Gown",
+    unitsSold: 156,
+    revenue: 31200,
+    popularity: 92,
+    category: "Dresses",
+  },
+  {
+    name: "Luxury Leather Handbag",
+    unitsSold: 142,
+    revenue: 28400,
+    popularity: 88,
+    category: "Accessories",
+  },
+  {
+    name: "Premium Denim Collection",
+    unitsSold: 128,
+    revenue: 25600,
+    popularity: 85,
+    category: "Bottoms",
+  },
+  {
+    name: "Designer Sunglasses",
+    unitsSold: 98,
+    revenue: 19600,
+    popularity: 20,
+    category: "Accessories",
+  },
+];
