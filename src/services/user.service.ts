@@ -37,11 +37,22 @@ const updateOrCreateUserPreferences = async (
   UserId: number,
   userPreferencesData: CreationAttributes<UserPreferences>
 ) => {
-  const userPreferences = await UserPreferences.upsert({
+  const existingPreferences = await UserPreferences.findOne({
+    where: { UserId },
+  });
+
+  if (existingPreferences) {
+    const updatedPreferences = await existingPreferences.update({
+      ...userPreferencesData,
+    });
+    return updatedPreferences;
+  }
+
+  const newPreferences = await UserPreferences.create({
     UserId,
     ...userPreferencesData,
   });
-  return userPreferences;
+  return newPreferences;
 };
 
 export {
