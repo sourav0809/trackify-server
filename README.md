@@ -10,6 +10,13 @@ The backend is powered by **Express**, **TypeScript**, and **PostgreSQL**, with 
 - **Frontend:** [https://trackify.devsourav.online](https://trackify.devsourav.online)  
 - **Backend API:** [https://api.devsourav.online/api](https://api.devsourav.online/api)
 
+---
+
+## 📂 Repositories
+
+- **Frontend Repo:** [https://github.com/sourav0809/trackify-sales-dashboard](https://github.com/sourav0809/trackify-sales-dashboard)  
+- **Backend Repo:** [https://github.com/sourav0809/trackify-server](https://github.com/sourav0809/trackify-server)
+
 > You can create a new account or use the demo credentials below:
 
 ```
