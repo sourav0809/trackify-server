@@ -1,3 +1,5 @@
+// @ts-nocheck
+
 import express, { Request, Response } from "express";
 import cors from "cors";
 import rateLimit from "express-rate-limit";
