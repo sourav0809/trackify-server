@@ -1,10 +1,7 @@
-// @ts-nocheck
-
 import express, { Request, Response } from "express";
 import cors from "cors";
 import rateLimit from "express-rate-limit";
 import helmet from "helmet";
-import compression from "compression";
 import { envConfig } from "./config/envConfig";
 import authRoutes from "./routes/auth.routes";
 import userRoutes from "./routes/user.route";
@@ -38,9 +35,6 @@ const limiter = rateLimit({
 });
 
 app.use(limiter);
-
-// Compression middleware
-app.use(compression());
 
 // Routes
 app.use("/api/auth", authRoutes);
